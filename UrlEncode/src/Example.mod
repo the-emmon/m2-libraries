@@ -19,7 +19,7 @@ BEGIN;
   WriteString("Input: "); WriteString(normalString); WriteLn();
   WriteString("Output: "); WriteString(encodedString); WriteLn();
 
-  normalString:= "VGVzdGluZyB*YXNlN+jQt/b2RlZCBzdHJpbmdzI?z?IHBhcmFtZXRlcnM=";
+  normalString:= "VGVzdGluZyB*YXNlN+jQt/b2RlZCBzdHJpbmdzI?z?IHBhcmFtZXRlcnM==";
   encodedString:= UrlEncodeFull(normalString);
   WriteString("Input: "); WriteString(normalString); WriteLn();
   WriteString("Output: "); WriteString(encodedString); WriteLn();

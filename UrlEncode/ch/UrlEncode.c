@@ -32,7 +32,7 @@ char* UrlEncodeLight(char *retarray, char *input)
       snprintf(dest, 4, "%%%02X", c);
     strcat(out, dest);
 	}
-  snprintf(retarray, strlen(out), "%s", out);
+  snprintf(retarray, strlen(out)+1, "%s", out);
 	return retarray;
 }
 
@@ -50,6 +50,6 @@ char* UrlEncodeFull(char *retarray, char *input)
       snprintf(dest, 4, "%%%02X", c);
     strcat(out, dest);
   }
-  snprintf(retarray, strlen(out), "%s", out);
+  snprintf(retarray, strlen(out)+1, "%s", out);
   return retarray;
 }
