@@ -1,5 +1,5 @@
 ## Overview ##
-A URL-encoding library with "full" mode for encoding url parameters, as well as a "light" mode that ignores "=", "?", and "&" characters.  
+A URL-encoding library with a "full" mode for encoding url parameters, as well as a "light" mode that ignores "=", "?", and "&" characters.  
 
 ## Example ##
 Light mode:  
