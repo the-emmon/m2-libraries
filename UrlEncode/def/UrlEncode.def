@@ -1,0 +1,15 @@
+DEFINITION MODULE ["C"] UrlEncode;
+
+(*
+   URL-encoding library with "full" mode for params, as well
+  as a "light" mode that ignores "=", "?", and "&" characters.
+                - Developed for XDS Modula-2 -             
+*)
+
+TYPE
+  urlString = ARRAY [0..511] OF CHAR;
+
+PROCEDURE UrlEncodeFull(initString: urlString): urlString;
+PROCEDURE UrlEncodeLight(initString: urlString): urlString;
+
+END UrlEncode.

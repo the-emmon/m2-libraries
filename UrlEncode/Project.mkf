@@ -1,0 +1,49 @@
+M	= Project.mkf
+XDSDIR	= /usr/local/xds/bin/..
+INCL	= $(XDSDIR)/include/C
+XDSLIB	= /usr/local/xds/lib/C/libxds.a
+
+TSLIBS	= /usr/local/xds/lib/C/libts.a
+
+TARGET	= Example
+
+CDEFS	= -D_unix -D_linux -DX2C_no_spawn -DX2C_strcmp
+CFLAGS	= -m32 -O3 -c -g -fno-strength-reduce -I$(INCL) -I$(PWD)/ch -funsigned-char -fpack-struct=4
+CC	= gcc
+LFLAGS	= -m32
+X11FLAGS	= -I$(INCL)/x11_include -I/usr/X11R6/include
+X11LIBS	= -L/usr/X11R6/lib -lXext -lX11
+XMFLAGS	= -I$(INCL)/xm_include $(X11FLAGS)
+XMLIBS	= -L/usr/X11R6/lib -lXm -lXt -lXext -lX11
+
+
+XFLAGS	=
+XLIBS	=
+
+
+# ------------------ objects enumeration ------------------
+#                    -------------------
+
+OBJ= \
+	obj/Example.o \
+	obj/UrlEncode.o
+# ------------------- target make rules -------------------
+#                     -----------------
+
+$(TARGET) : $(OBJ) $(TSLIBS) $(XDSLIB)
+	$(CC) $(LFLAGS) -o $(TARGET) $(OBJ) $(TSLIBS) $(XDSLIB) $(XLIBS) -lm -lncurses -lcurl
+
+# ----------------- Dependency information ----------------
+#                   ----------------------
+
+obj/Example.o            : ch/UrlEncode.h
+obj/Example.o            : $(M) ch/Example.c
+	$(CC) $(CDEFS) $(CFLAGS) $(XFLAGS) -o obj/Example.o ch/Example.c
+
+obj/UrlEncode.o          : ch/UrlEncode.h
+obj/UrlEncode.o          : $(M) ch/UrlEncode.c
+	$(CC) $(CDEFS) $(CFLAGS) $(XFLAGS) -o obj/UrlEncode.o ch/UrlEncode.c
+
+
+# end of makefile
+

@@ -1,0 +1,12 @@
+xm.msg = /usr/local/xds/bin
+xm.cfg = /usr/local/xds/bin
+*.tem  = /usr/local/xds/bin
+*.a    = /usr/local/xds/lib/C
+*.sym  = $!/sym;/usr/local/xds/sym/C
+*.o    = $!/obj
+*.def  = $!/def
+*.mod  = $!/src
+*.ob2  = $!/src
+*.prj  = $!
+*.c    = $!/ch
+*.h    = $!/ch
