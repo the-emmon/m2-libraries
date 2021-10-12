@@ -20,7 +20,6 @@ static int param_issafe(int c)
 
 char* UrlEncodeLight(char *retarray, char *input)
 {
-	const char *p;
   size_t length = strlen(input);
   char dest[512] = "";
   char out[512] = "";
@@ -38,7 +37,6 @@ char* UrlEncodeLight(char *retarray, char *input)
 
 char* UrlEncodeFull(char *retarray, char *input)
 {
-  const char *p;
   size_t length = strlen(input);
   char dest[512] = "";
   char out[512] = "";
